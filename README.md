@@ -1,1 +1,2 @@
-# mina
+# MINA
+Therapy Chatbot

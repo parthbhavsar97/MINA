@@ -1,0 +1,32 @@
+{
+    "en" : {
+        "DB_ERROR" : "Database Error",
+        "PARAM_REQUIRED" : "'PARAM' is requried",
+        "INVALID_PARAM" : "Invalid 'PARAM'",
+        "INVALID_APP_VERSION" : "Invalid app version.",
+        "UPGRADE_APP" : "Please upgrade your app.",
+        "INVALID_TOKEN" : "Invalid default auth token",
+        "USER_WITH_SAME_EMAIL_EXISTS" : "It looks like entered email is already registered. Please use different email.",
+        "USER_DELETED" : "Your account no longer exists. Please register again.",
+        "USER_BLOCKED" : "You are temporarily blocked by the admin. Please try again later.",
+        "ERROR_UPLOADING_S3" : "An error occured while uploading file on S3 bucket.",
+        "ERROR_DELETE_S3" : "An error occured while deleting file from S3 bucket.",
+        "INCORRECT_EMAIL_OR_PASSWORD" : "Incorrect email or password.",
+        "INCORRECT_EXISTING_PASSWORD" : "Incorrect existing password.",
+        "LOGIN_SUCCESS" : "Login successfull.",
+        "CATEGORY_ALREADY_EXISTS" : "This category already exists.",
+        "NO_DATA_FOUND" : "Data not found.",
+        "FORGOT_PASSWORD_SUCCESS" : "Please check your email to reset the password.",
+        "RESET_PASSWORD_SUCCESS" : "Your password has been successfully updated.",
+        "TOKEN_EXPIRED" : "Token or session expired.",
+        "SIGNUP_SUCCESS" : "Thanks! Your account has been successfully created.",
+        "INCORRECT_PASSWORD" : "Incorrect password.",
+        "FORGOT_PASSWORD_SUCCESS_EMAIL_SENT": "A reset password link has been sent to your email account.",
+        "ADMIN_NOT_FOUND_WITH_EMAIL" : "Incorrect email.",
+        "SUCCESS" : "Success",
+        "EMAIL_NOT_FOUND" : "It looks like entered email id is not registered. please enter a registered email."
+
+
+
+    }
+}

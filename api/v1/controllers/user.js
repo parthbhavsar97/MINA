@@ -1,0 +1,50 @@
+const userValidator = require('../validators/userValidator.js')
+const userHelper = require('../helpers/userHelper.js')
+const userHelperAdmin = require('../helpers/userHelperAdmin.js')
+const responseHelper = require('../../utils/responseHelper')
+
+class User {
+
+   async editProfile(req, res) {
+      try {
+         await userValidator.validateEditProfileRequest(req.body)
+         await userValidator.isEmailExistOnEdit(req.body)
+         let user = await userHelper.editProfile(req.body)
+         responseHelper.success(res, 'EDIT_PROFILE_SUCCESS', req.headers.language, user)
+      } catch (error) {
+         responseHelper.error(res, error, req.headers.language)
+      }
+   }
+
+   async verifyEmail(req, res) {
+      try {
+         await userValidator.validateVerifyEmailRequest(req.body)
+         let user = await userHelperAdmin.getUserById(req.body.user_id)
+         let result = await userHelper.verifyUserEmail(user)
+         // await mailHelper.sendEmailVerificationMail(user)
+         responseHelper.success(res, 'SUCCESS', req.headers.language, result)
+      } catch (error) {
+         responseHelper.error(res, error, req.headers.language)
+      }
+   }
+
+
+   //Google Dialogue flow Webhook API (Test)
+   async googleDialogueFlowWebhook(req, res) {
+      try {
+         console.log("Request from Google Dialogue Flow Webhook: ")
+         console.log("REQUEST BODY: ", req.body)
+
+         let number = Math.floor(Math.random() * 10000)
+         console.log(number)
+         responseHelper.webhookSuccess(res, 'SUCCESS', req.headers.language, number)
+      } catch (error) {
+         responseHelper.error(res, error, req.headers.language)
+         throw error
+      }
+   }
+
+
+}
+
+module.exports = new User()
