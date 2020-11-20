@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title><%= siteTitle%></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        .t {
+            height: 60px;
+        }
+
+        label {
+            font-size: 14px;
+            margin-left: 15px;
+            margin-top: -10px;
+            margin-bottom: 9px;
+            background: #fff;
+            padding: 0 8px 0 8px;
+            position: absolute;
+        }
+
+        .myForm {
+            padding: 30px;
+        }
+
+        @media (max-width: 767px) {
+            .text-center.reset_button {
+                position: absolute;
+                bottom: 64px;
+                right: 0px;
+                left: 0px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h2 {
+                justify-content: center;
+                justify-self: center;
+            }
+
+            .myForm {
+                padding: 0px;
+                margin-top: 20px;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 360px) {
+            .text-center.reset_button input.btn {
+                width: 88% !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body style="font-family:Poppins ; background-color: #fff; padding: 15px">
+    <table width="90%" style="margin: 0px auto;display: block;max-width: 600px" cellspacing="0" cellpadding="0">
+        <tbody style="width: 100%;display: block;">
+            <tr style="width: 100%;display: block;">
+                <td style="padding: 40px 0 10px;width: 100%;display:block;">
+                    <h2 class="text-center uk-text-bold">Set your new password</h2>
+                    <!-- <img src="logo_path" alt="logo"
+                        style="text-align: left;width: 140px;display: block;margin: 0px auto 30px;"> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table width="90%" cellspacing="0" cellpadding="0"
+        style="margin: 0px auto;display: block; border-radius: 15px;max-width:440px ">
+        <tbody style="display: block;">
+            <tr style="display: block;">
+                <td style="display: block;">
+                    <table width="100%" style="padding: 20px 0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr style="padding: 15px;">
+                                <td>
+                                    <form name="myForm" style="" method="POST"
+                                        action="http://localhost:5000/api/v1/resetPasswordUser/<%= params.token%>"
+                                        class="align-middle myForm" onubmit="return submit()">
+                                        <div class="form-group align-middle">
+                                            <label for="new_password">New Password</label>
+                                            <input type="password" class="form-control t" minlength="8" required
+                                                id="new_password" name="new_password">
+                                        </div>
+                                        <div class="text-center reset_button">
+                                            <input type="submit" class="btn btn-sm text-center"
+                                                value="Save new Password" style="
+                                        background: linear-gradient(107.34deg, #38B0C0 1.76%, #27D6EB 100%); 
+                                        box-shadow: 0px 5px 22px 1px rgba(26, 166, 183, 0.25);
+                                        border-radius: 40px;
+                                        Width: 335px;
+                                        Height: 67px;
+                                        font-family: Poppins;
+                                        font-style: normal;
+                                        font-weight: 600;
+                                        font-size: 16px;
+                                        text-align: center;
+                                        color: #FFFFFF;
+                                        outline: none;
+
+                                        padding: 15px 25px;
+                                        text-decoration: none;
+                                        ">
+                                        </div>
+
+                                    </form>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+
+</body>
+
+<script>
+    function submit() {
+        // let new_password = document.getElementById('new_password').value,
+        //     confirm_password = document.getElementById('confirm_password').value
+        var new_password = document.forms["myForm"]["new_password"].value;
+        var confirm_password = document.forms["myForm"]["confirm_password"].value;
+        console.log(new_password, confirm_password)
+        if (new_password != '' && confirm_password != '') {
+            if (new_password == confirm_password) {
+                return true
+                // let data = {
+                //     new_password: new_password
+                // }
+                // let response = await fetch('http://localhost:3005/api/v1/resetPasswordAdmin', {
+                //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                //     mode: 'cors', // no-cors, *cors, same-origin
+                //     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                //     headers: {
+                //         'Content-Type': 'application/json',
+                //         'auth_token' : '<%= params.token%>',
+                //         'language' : 'en',
+                //         'android_app_version' : '1.0.0'
+                //         // 'Content-Type': 'application/x-www-form-urlencoded',
+                //     },
+                //     redirect: 'follow', // manual, *follow, error
+                //     referrerPolicy: 'no-referrer', // no-referrer, *client
+                //     body: JSON.stringify(data)
+                // })
+                // console.log("[ RESPONSE ]", response)
+                // document.getElementById('response').value = response.status
+
+            } else {
+                alert('Password do not match !')
+                return false
+            }
+        } else {
+            alert('Please enter a valid password.')
+            return false
+        }
+    }
+</script>
+
+</html>

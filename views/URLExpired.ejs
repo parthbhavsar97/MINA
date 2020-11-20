@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title><%= siteTitle%></title>
+</head>
+
+<style>
+    .successErrorMessage {
+        opacity: 1;
+        animation-name: fadeInOpacity;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-duration: 0.2s;
+    }
+
+    @keyframes fadeInOpacity {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<body style="font-family:Poppins; padding: 15px">
+    <table width="90%" style="margin: 0px auto;display: block;max-width: 600px" cellspacing="0" cellpadding="0">
+        <tbody style="width: 100%;display: block;">
+            <tr style="width: 100%;display: block;">
+                <td style="padding: 40px 0 10px;width: 100%;display:block;">
+                    <!-- <img src="https://pop-assests.s3.amazonaws.com/logo/Group+9512.png" alt="logo"
+                        style="text-align: left;width: 140px;display: block;margin: 0px auto 30px;"> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table width="90%" cellspacing="0" cellpadding="0"
+        style="margin: 0px auto;display: block;background-color: white;border-radius: 15px;max-width:600px ">
+        <tbody style="display: block;">
+            <tr style="display: block;">
+                <td style="display: block;">
+                    <table width="100%" style="padding: 20px 0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr style="padding: 15px;">
+                                <td align="middle">
+                                    <p class="text-center">Your reset password link has expired.</p>
+                                </td>
+
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>

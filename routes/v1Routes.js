@@ -17,7 +17,9 @@ router.post('/login', headersValidator.nonAuthValidation, registration.login)
 router.post('/signup', headersValidator.nonAuthValidation, registration.signup)
 router.post('/changePassword', headersValidator.authValidation, registration.changePassword)
 router.post('/forgotPassword', headersValidator.nonAuthValidation, registration.forgotPassword)
-router.post('/resetPassword', headersValidator.authValidation, registration.resetPassword)
+
+router.get('/resetPassword/:token', registration.resetPassword)
+router.post('/resetPasswordUser/:token', registration.resetPasswordUser)
 // router.post('/forgotPassword', headersValidator.nonAuthValidation, registration.forgotPassword)
 
 

@@ -41,8 +41,8 @@ module.exports = (function () {
     }
 
     data.links = {
-      forgot_password_admin: "localhost:3000/admin-panel/forgot-password",
-      forgot_password_user: "localhost:3000/admin-panel/forgot-password"
+      forgot_password_admin: "localhost:5000/admin-panel/forgot-password",
+      forgot_password_user: "localhost:5000/api/v1/resetPassword/"
     }
 
   }
@@ -74,8 +74,8 @@ module.exports = (function () {
     }
 
     data.links = {
-      forgot_password_admin: "localhost:3000/admin-panel/forgot-password",
-      forgot_password_user: "localhost:3000/admin-panel/forgot-password"
+      forgot_password_admin: "localhost:5000/admin-panel/forgot-password",
+      forgot_password_user: "localhost:5000/api/v1/resetPassword/"
     }
 
   } else {
@@ -102,7 +102,7 @@ module.exports = (function () {
 
     data.links = {
       forgot_password_admin: "localhost:3000/admin-panel/forgot-password",
-      forgot_password_user: "localhost:3000/admin-panel/forgot-password"
+      forgot_password_user: "localhost:5000/api/v1/resetPassword/"
     }
 
   }

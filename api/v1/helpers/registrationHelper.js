@@ -46,6 +46,20 @@ class RegistrationHelper {
       throw error
     }
   }
+
+  async changePasswordUser(body) {
+    try {
+      let data = {
+        password: await passwordHelper.getPasswordHash(body.new_password),
+        modified_date: dateHelper.getCurrentTimeStamp(),
+        last_auth_token: body.auth_token
+      }
+      await db.update('users', `user_id = ${body.user_id} `, data)
+      return true
+    } catch (error) {
+      throw error
+    }
+  }
 }
 
 module.exports = new RegistrationHelper()

@@ -67,7 +67,7 @@ class Mailer {
           console.log('\nERROR -> read forgotPasswordAdmin.html file !\n', err);
           throw err
         } else {
-          let subject = `Therapy Chatbot - Reset Password`,
+          let subject = `MINA Chatbot - Reset Password`,
             message
           message = file;
           message = message.replace("@@IMAGE_LOGO@@", config.therapy_logo);
@@ -101,12 +101,12 @@ class Mailer {
           console.log('\nERROR -> read forgotPasswordUser.html file !\n', err);
           throw err
         } else {
-          let subject = `Therapy Chatbot - Reset Password`,
+          let subject = `MINA Chatbot - Reset Password`,
             message
           message = file;
           message = message.replace("@@IMAGE_LOGO@@", config.therapy_logo);
           message = message.replace("@@USER_NAME@@", 'customer');
-          message = message.replace("@@LINK@@", config.links.forgot_password_user + `?auth_token=${token.auth_token}`);
+          message = message.replace("@@LINK@@", config.links.forgot_password_user + `${token.auth_token}`);
           let mailOptions = {
             from: config.email.sender_mail,
             to: user.email,
