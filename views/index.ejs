@@ -85,7 +85,7 @@
                             <tr style="padding: 15px;">
                                 <td>
                                     <form name="myForm" style="" method="POST"
-                                        action="http://localhost:5000/api/v1/resetPasswordUser/<%= params.token%>"
+                                        action="<%= params.reset_password_api%><%= params.token%>"
                                         class="align-middle myForm" onubmit="return submit()">
                                         <div class="form-group align-middle">
                                             <label for="new_password">New Password</label>

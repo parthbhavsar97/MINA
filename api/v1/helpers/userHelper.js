@@ -36,6 +36,33 @@ class UserHelper {
     }
   }
 
+  async addOrUpdateUserDeviceRelation(body) {
+    try {
+      let data = {
+        user_id: body.user_id,
+        allow_notification: 1,
+        device_token: body.device_token,
+        device_id: body.device_id,
+        device_type: body.device_type,
+        modified_date: dateHelper.getCurrentTimeStamp(),
+        os: body.os,
+        app_version: body.app_version
+      },
+        where = ` device_id = '${body.device_id}' and user_id = ${body.user_id}`,
+        selectParams = '*',
+        device_data = await db.select('user_device', selectParams, where)
+      if (device_data.length > 0) {
+        await db.update('user_device', where, data)
+      } else {
+        data.created_date = dateHelper.getCurrentTimeStamp()
+        await db.insert('user_device', data)
+      }
+    } catch (error) {
+      console.log(error)
+      throw error
+    }
+  }
+
 }
 
 module.exports = new UserHelper()

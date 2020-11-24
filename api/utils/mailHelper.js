@@ -8,7 +8,7 @@ var transporter = nodemailer.createTransport({
   // port: 587,
   secure: true,
   // requireTLS: true,
-  // secureConnection: false,
+  secureConnection: false,
   // tls: { ciphers: 'SSLv3' },
   // tls: { rejectUnauthorized: false },
   // debug: true,
@@ -35,7 +35,7 @@ class Mailer {
           let subject = `VdSta - verify your email`,
             message
           message = file;
-          message = message.replace("@@IMAGE_LOGO@@", config.vdsta_logo);
+          message = message.replace("@@IMAGE_LOGO@@", config.therapy_logo);
           message = message.replace('@@USER_FIRSTNAME@@', `${user.name.charAt(0).toUpperCase() + user.name.slice(1)}`);
           message = message.replace("@@LINK2@@", `https://app.vdsta.com/steps?auth_token=${token.auth_token}&refreshken=${token.refresh_token}`);
           let mailOptions = {

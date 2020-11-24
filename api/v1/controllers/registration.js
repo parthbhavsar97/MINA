@@ -88,7 +88,7 @@ class Registration {
       let user = await userHelper.getUserById(tokenData.user_id)
       if (user.last_auth_token == req.params.token) throw 'URL expired'
       if (tokenData) {
-        res.render('index.ejs', { siteTitle: "MINA - Chatbot", params: req.params })
+        res.render('index.ejs', { siteTitle: "MINA - Chatbot", params: { ...req.params, reset_password_api: config.links.reset_password_api } })
       }
     } catch (error) {
       console.log(error)

@@ -9,7 +9,7 @@ module.exports = (function () {
     refresh_token: "TherapyChatbotjmLVF6G9Aarypa9y5AhG3JpwQXanNRWBgaaTfU3d",
     androidAppVerision: "1.0.0",
     iosAppVerision: "1.0.0",
-    therapy_logo: 'logo_path',
+    therapy_logo: 'https://mina-chatbot.s3-us-west-1.amazonaws.com/logo/Mina_Chatbot_Logo.png',
     isSSL: false,
 
     s3: {
@@ -23,15 +23,14 @@ module.exports = (function () {
   }
 
   if (process.env.NODE_ENV === "production") {
-    data.host = "app.vdsta.com"
+    data.host = "localhost"
     data.port = 5050
-    data.adminPanelLink = 'http://3.8.221.31/vdsta_app/admin-panel/'
 
     data.db = {
-      host: "vdstadb.ctpaahkf9zho.eu-west-2.rds.amazonaws.com",
-      user: "vdsta_adminuser",
-      password: "remotestar123",
-      database: "vdsta_db"
+      host: "tristatepostgresql.chkbypvvasb2.us-west-1.rds.amazonaws.com",
+      user: "postgres",
+      password: "postgresDB2020",
+      database: "therapy_db_dev"
     }
 
     data.email = {
@@ -49,17 +48,14 @@ module.exports = (function () {
 
   else if (process.env.NODE_ENV === "staging") {
     // data.isSSL = true
-    // data.host = "app.vdsta.com" 
     data.host = "localhost"
-    // data.port = 8443
     data.port = 5050
-    data.adminPanelLink = 'http://3.8.221.31/staging/admin-panel/'
 
     data.db = {
-      host: "vdstadb.ctpaahkf9zho.eu-west-2.rds.amazonaws.com",
-      user: "vdsta_adminuser",
-      password: "remotestar123",
-      database: "vdsta_db_staging"
+      host: "tristatepostgresql.chkbypvvasb2.us-west-1.rds.amazonaws.com",
+      user: "postgres",
+      password: "postgresDB2020",
+      database: "therapy_db_dev"
     }
 
     data.stripe = {
@@ -80,17 +76,21 @@ module.exports = (function () {
 
   } else {
     data.isSSL = false
-    data.host = "localhost" 
-    // data.host = "app.vdsta.com"
+    // data.host = "localhost" 
+    data.host = "54.219.172.96" 
     data.port = 5000
-    // data.port = 2096
-    // data.adminPanelLink = 'http://3.8.221.31/vdsta_app/admin-panel/'
-    data.adminPanelLink = 'http://3.8.221.31/vdsta_app/admin-panel/'
+
+    // data.db = {
+    //   host: "localhost",
+    //   user: "postgres",
+    //   password: "tristate123",
+    //   database: "therapy_db_dev"
+    // }
 
     data.db = {
-      host: "localhost",
+      host: "tristatepostgresql.chkbypvvasb2.us-west-1.rds.amazonaws.com",
       user: "postgres",
-      password: "tristate123",
+      password: "postgresDB2020",
       database: "therapy_db_dev"
     }
 
@@ -100,9 +100,15 @@ module.exports = (function () {
       service: 'Gmail'
     }
 
+    // data.links = {
+    //   forgot_password_admin: "localhost:3000/admin-panel/forgot-password",
+    //   forgot_password_user: "localhost:5000/api/v1/resetPassword/"
+    // }
+
     data.links = {
-      forgot_password_admin: "localhost:3000/admin-panel/forgot-password",
-      forgot_password_user: "localhost:5000/api/v1/resetPassword/"
+      forgot_password_admin: "http://54.219.172.96:5000/admin-panel/forgot-password",
+      forgot_password_user: "http://54.219.172.96:5000/api/v1/resetPassword/",
+      reset_password_api: "http://54.219.172.96:5000/api/v1/resetPasswordUser/"
     }
 
   }

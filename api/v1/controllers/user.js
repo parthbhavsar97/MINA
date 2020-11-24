@@ -28,7 +28,6 @@ class User {
       }
    }
 
-
    //Google Dialogue flow Webhook API (Test)
    async googleDialogueFlowWebhook(req, res) {
       try {
@@ -44,6 +43,16 @@ class User {
       }
    }
 
+   async manageUserDeviceRelation(req, res) {
+      try {
+        await userValidator.userDeviceRequest(req.body)
+        await userHelper.addOrUpdateUserDeviceRelation(req.body, req.headers)
+        responseHelper.success(res, 'SUCCESS', req.headers.language, {})
+      } catch (error) {
+        console.log(error)
+        responseHelper.error(res, error, req.headers.language)
+      }
+    }
 
 }
 
