@@ -13,7 +13,7 @@
         "ERROR_DELETE_S3" : "An error occured while deleting file from S3 bucket.",
         "INCORRECT_EMAIL_OR_PASSWORD" : "Incorrect email or password.",
         "INCORRECT_EXISTING_PASSWORD" : "Incorrect existing password.",
-        "LOGIN_SUCCESS" : "Login successfull.",
+        "LOGIN_SUCCESS" : "Login successful.",
         "CATEGORY_ALREADY_EXISTS" : "This category already exists.",
         "NO_DATA_FOUND" : "Data not found.",
         "FORGOT_PASSWORD_SUCCESS" : "Please check your email to reset the password.",

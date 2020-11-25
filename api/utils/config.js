@@ -58,11 +58,6 @@ module.exports = (function () {
       database: "therapy_db_dev"
     }
 
-    data.stripe = {
-      secret_key: "sk_test_51H9njwLbfMCQUgd30242WIwVIphiGlIXLr0OHOaI10kjpOqtsRcz8DWapneE5dljKWorXoPMc0lxRKw6KP2oPaD900YL33n1pQ",
-      publishable_key: "pk_test_51H9njwLbfMCQUgd34yZV6p0InFkChVnNZDpn1D8A7GrLhFqW6NTiNuPXyYuAgYjS5XRS0WFzzYciSahnXEroOZml00QyUYDaLy"
-    }
-
     data.email = {
       sender_mail: 'tristate.mteam@gmail.com',
       sender_password: 'Tristate@1234',
