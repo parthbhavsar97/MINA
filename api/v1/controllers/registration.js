@@ -20,7 +20,7 @@ class Registration {
       let user = await registrationHelper.signUp(req.body)
 
       let token = await codeHelper.getJwtToken(user.user_id, 0, 1)
-      responseHelper.success(res, 'SIGNUP_SUCCESS', req.headers.language, true)
+      responseHelper.success(res, 'SIGNUP_SUCCESS', req.headers.language, {...user, ...token})
     } catch (error) {
       responseHelper.error(res, error, req.headers.language)
     }
