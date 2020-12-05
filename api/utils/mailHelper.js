@@ -6,7 +6,7 @@ var transporter = nodemailer.createTransport({
   service: config.email.service,
   // host: 'mail.vdsta.com',
   // port: 587,
-  secure: true,
+  secure: false,
   // requireTLS: true,
   secureConnection: false,
   // tls: { ciphers: 'SSLv3' },
