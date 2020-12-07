@@ -17,18 +17,17 @@ const multer = Multer({
 router.post('/login', headersValidator.nonAuthValidation, registration.login)
 router.post('/signup', headersValidator.nonAuthValidation, registration.signup)
 router.post('/changePassword', headersValidator.authValidation, registration.changePassword)
-
 router.post('/forgotPassword', headersValidator.nonAuthValidation, registration.forgotPassword)
 router.get('/resetPassword/:token', registration.resetPassword)
 router.post('/resetPasswordUser/:token', registration.resetPasswordUser)
 
-// Service APIs
+// Service (Topics)
 router.get('/getServices', headersValidator.authValidation, service.getservices)
 
-//Google Dialogue flow Webhook API (Test)
+// Google Dialogue flow Webhook (Test)
 router.post('/googleDialogueFlowWebhook', user.googleDialogueFlowWebhook)
 
-// Device Relations
+// Device Relations (User Device related)
 router.post('manageUserDeviceRelation', headersValidator.authValidation, user.manageUserDeviceRelation)
 
 module.exports = router

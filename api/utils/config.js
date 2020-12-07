@@ -41,7 +41,8 @@ module.exports = (function () {
 
     data.links = {
       forgot_password_admin: "localhost:5000/admin-panel/forgot-password",
-      forgot_password_user: "localhost:5000/api/v1/resetPassword/"
+      forgot_password_user: "localhost:5000/api/v1/resetPassword/",
+      reset_password_api: "http://54.219.172.96:5000/api/v1/resetPasswordUser/"
     }
 
   }
@@ -66,13 +67,14 @@ module.exports = (function () {
 
     data.links = {
       forgot_password_admin: "localhost:5000/admin-panel/forgot-password",
-      forgot_password_user: "localhost:5000/api/v1/resetPassword/"
+      forgot_password_user: "localhost:5000/api/v1/resetPassword/",
+      reset_password_api: "http://54.219.172.96:5000/api/v1/resetPasswordUser/"
     }
 
   } else {
     data.isSSL = false
-    // data.host = "localhost" 
-    data.host = "54.219.172.96" 
+    data.host = "localhost" 
+    // data.host = "54.219.172.96" 
     data.port = 5000
 
     // data.db = {

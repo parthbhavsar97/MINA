@@ -1,6 +1,7 @@
 const registrationValidator = require('../validators/registrationValidator')
 const responseHelper = require('../../utils/responseHelper')
 const codeHelper = require('../../utils/codeHelper')
+const config = require('../../utils/config')
 const registrationHelper = require('../helpers/registrationHelper')
 const userHelperAdmin = require('../helpers/userHelperAdmin')
 const passwordHelper = require('../../utils/passwordHelper')

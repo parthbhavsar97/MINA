@@ -3,6 +3,7 @@ const router = express.Router()
 const headersValidator = require('../api/utils/headersValidator')
 const registration = require('../api/v1/controllers/registrationAdmin')
 const userAdmin = require('../api/v1/controllers/userAdmin')
+const configController = require('../api/v1/controllers/config')
 
 // Login AND Change/Forgot Password
 router.post('/login', headersValidator.nonAuthValidation, registration.loginAdmin)
@@ -11,11 +12,14 @@ router.post('/forgotPasswordAdmin', headersValidator.nonAuthValidation, registra
 router.post('/resetPasswordAdmin', headersValidator.nonAuthValidation, registration.resetPasswordAdmin)
 
 // Dashboard
-router.post('/getDashboardCounts', headersValidator.authValidation, userAdmin.getDashboardCounts)
+router.get('/getDashboardCounts', headersValidator.authValidation, userAdmin.getDashboardCounts)
 
 // USER APIs
 router.post('/getUsers', headersValidator.authValidation, userAdmin.getUsers)
 router.post('/addUser', headersValidator.authValidation, userAdmin.addUser)
 router.post('/updateUser', headersValidator.authValidation, userAdmin.updateUser)
+
+// Configs (Privacy Policies and Terms and Conditions)
+router.get('/getConfig', headersValidator.authValidation, configController.getConfig)
 
 module.exports = router
