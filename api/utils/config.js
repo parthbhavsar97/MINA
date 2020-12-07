@@ -73,8 +73,8 @@ module.exports = (function () {
 
   } else {
     data.isSSL = false
-    data.host = "localhost" 
-    // data.host = "54.219.172.96" 
+    // data.host = "localhost" 
+    data.host = "54.219.172.96" 
     data.port = 5000
 
     // data.db = {

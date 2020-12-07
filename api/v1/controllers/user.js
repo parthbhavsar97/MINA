@@ -56,7 +56,7 @@ class User {
       }
    }
 
-   async getConfig() {
+   async getConfig(req, res) {
       try {
          let config = await configHelper.getConfig()
          responseHelper.success(res, 'SUCCESS', req.headers.language, config)

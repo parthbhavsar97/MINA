@@ -28,9 +28,9 @@ router.get('/getServices', headersValidator.authValidation, service.getservices)
 router.post('/googleDialogueFlowWebhook', user.googleDialogueFlowWebhook)
 
 // Device Relations (User Device related)
-router.post('manageUserDeviceRelation', headersValidator.authValidation, user.manageUserDeviceRelation)
+router.post('/manageUserDeviceRelation', headersValidator.authValidation, user.manageUserDeviceRelation)
 
 //Terms and Conditions/ Privacy Policy
-router.get('getConfig', headersValidator.authValidation, user.getConfig)
+router.get('/getConfig', headersValidator.authValidation, user.getConfig)
 
 module.exports = router
