@@ -24,7 +24,9 @@
         "FORGOT_PASSWORD_SUCCESS_EMAIL_SENT": "A reset password link has been sent to your email account.",
         "ADMIN_NOT_FOUND_WITH_EMAIL" : "Incorrect email.",
         "SUCCESS" : "Success",
-        "EMAIL_NOT_FOUND" : "It looks like entered email id is not registered. please enter a registered email."
+        "EMAIL_NOT_FOUND" : "It looks like entered email id is not registered. please enter a registered email.",
+        "PRIVACY_POLICY_UPDATE_SUCCESS" : "Privacy Policy has been successfully updated.",
+        "TERMS_AND_CONDITIONS_UPDATE_SUCCESS" : "Terms of Services has been successfully updated."
 
 
 

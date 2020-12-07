@@ -21,5 +21,6 @@ router.post('/updateUser', headersValidator.authValidation, userAdmin.updateUser
 
 // Configs (Privacy Policies and Terms and Conditions)
 router.get('/getConfig', headersValidator.authValidation, configController.getConfig)
+router.post('/updateConfig', headersValidator.authValidation, configController.updateConfig)
 
 module.exports = router

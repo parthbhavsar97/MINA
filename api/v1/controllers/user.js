@@ -2,6 +2,8 @@ const userValidator = require('../validators/userValidator.js')
 const userHelper = require('../helpers/userHelper.js')
 const userHelperAdmin = require('../helpers/userHelperAdmin.js')
 const responseHelper = require('../../utils/responseHelper')
+const db = require('../../utils/db.js')
+const configHelper = require('../helpers/configHelper.js')
 
 class User {
 
@@ -45,14 +47,24 @@ class User {
 
    async manageUserDeviceRelation(req, res) {
       try {
-        await userValidator.userDeviceRequest(req.body)
-        await userHelper.addOrUpdateUserDeviceRelation(req.body, req.headers)
-        responseHelper.success(res, 'SUCCESS', req.headers.language, {})
+         await userValidator.userDeviceRequest(req.body)
+         await userHelper.addOrUpdateUserDeviceRelation(req.body, req.headers)
+         responseHelper.success(res, 'SUCCESS', req.headers.language, {})
       } catch (error) {
-        console.log(error)
-        responseHelper.error(res, error, req.headers.language)
+         console.log(error)
+         responseHelper.error(res, error, req.headers.language)
       }
-    }
+   }
+
+   async getConfig() {
+      try {
+         let config = await configHelper.getConfig()
+         responseHelper.success(res, 'SUCCESS', req.headers.language, config)
+      } catch (error) {
+         console.log(error)
+         responseHelper.error(res, error, req.headers.language)
+      }
+   }
 
 }
 

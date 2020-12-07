@@ -9,11 +9,11 @@ module.exports = (function () {
     refresh_token: "TherapyChatbotjmLVF6G9Aarypa9y5AhG3JpwQXanNRWBgaaTfU3d",
     androidAppVerision: "1.0.0",
     iosAppVerision: "1.0.0",
-    therapy_logo: 'https://mina-chatbot.s3-us-west-1.amazonaws.com/logo/Mina_Chatbot_Logo.png',
+    therapy_logo: 'https://mina-chatbot-app.s3.us-east-2.amazonaws.com/logo/Mina_Chatbot_Logo.png',
     isSSL: false,
 
     s3: {
-      bucketName: 'vdsta',
+      bucketName: 'mina-chatbot-app',
       accessKey: 'AKIAJZVJAP52JD55GZFA',
       secretKey: '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',
       uploadURL: "https://vdsta.s3.eu-west-2.amazonaws.com",
